@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import FloatingContacts from './components/layout/FloatingContacts'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import NotFound from './pages/NotFound'
 import { pageSections } from './data/navigation'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
 
@@ -40,7 +39,7 @@ export default function App() {
                 element={<Navigate to={'/#' + section} replace />}
               />
             ))}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </main>
