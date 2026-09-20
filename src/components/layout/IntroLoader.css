@@ -1,0 +1,62 @@
+.intro-loader {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #07231f;
+  color: #dcebc9;
+}
+.intro-brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+}
+.intro-logo {
+  position: relative;
+  width: clamp(112px, 14vw, 160px);
+  height: auto;
+  padding: 12px;
+  background: #fafbf7;
+  object-fit: contain;
+}
+.intro-brand p {
+  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+}
+:root[dir='rtl'] .intro-brand p {
+  letter-spacing: 0;
+}
+.intro-orbit {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  top: -70px;
+  color: #8dc63f;
+  opacity: 0.3;
+}
+.intro-progress {
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: #dcebc926;
+}
+.intro-progress > span {
+  display: block;
+  height: 100%;
+  background: #8dc63f;
+  transform-origin: left;
+}
+:root[dir='rtl'] .intro-progress > span {
+  transform-origin: right;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-orbit,
+  .intro-progress {
+    display: none;
+  }
+}

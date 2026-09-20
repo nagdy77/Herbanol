@@ -1,0 +1,223 @@
+/* Shared finishing details; source artwork and video covers remain unchanged. */
+:root {
+  --panel-shadow: 0 16px 36px -28px #07231f45;
+  --ambient-tint: #8dc63f0c;
+  --footer-surface: #113024;
+}
+:root[data-theme='dark'] {
+  --panel-shadow: 0 16px 36px -24px #00000065;
+  --ambient-tint: #8dc63f08;
+  --footer-surface: #08251f;
+}
+.home-page .section-heading {
+  position: relative;
+}
+.section-thread {
+  position: absolute;
+  inset-inline-start: 2px;
+  top: -34px;
+  height: 24px;
+  width: 1px;
+  background: linear-gradient(transparent, var(--color-primary));
+  transform-origin: bottom;
+  opacity: 0.65;
+}
+.about-section {
+  background: linear-gradient(var(--color-background), var(--surface) 100px);
+}
+.home-page #applications,
+.home-page #sustainability {
+  background:
+    radial-gradient(ellipse at 80% 0%, var(--ambient-tint), transparent 65%),
+    var(--color-background);
+}
+.science-section {
+  background: linear-gradient(
+    var(--color-background),
+    var(--surface) 160px,
+    var(--surface)
+  );
+}
+.media-section {
+  background: linear-gradient(var(--surface), var(--color-cream) 130px);
+}
+.location-section {
+  background: linear-gradient(
+    var(--color-cream),
+    var(--color-background) 100px
+  );
+  border-top: 0;
+}
+.hero-image-scroll {
+  position: relative;
+  z-index: 1;
+}
+.home-page .hero-bottom {
+  margin-top: 28px;
+}
+.home-page .about-intro,
+.home-page .location-grid {
+  gap: clamp(28px, 5vw, 64px);
+}
+.home-page .process-flow {
+  margin-top: 38px;
+}
+.home-page .product-section-label {
+  margin-bottom: 32px;
+}
+.home-page .product-spec-strip {
+  margin-top: 30px;
+}
+.process-step,
+.analysis-panel,
+.media-item,
+.map-panel {
+  box-shadow: var(--panel-shadow);
+}
+.analysis-panel tbody th button:focus-visible {
+  outline-offset: -3px;
+}
+.analysis-panel tbody tr:hover {
+  background: var(--surface-accent);
+}
+.analysis-panel .is-selected,
+.analysis-panel tbody .is-selected:hover {
+  background: var(--surface-selected);
+}
+.process-node,
+.application-icon,
+.science-icon {
+  color: var(--color-primary);
+}
+.map-panel {
+  padding: 6px;
+  background: var(--surface);
+  border-color: var(--color-line);
+  border-radius: 10px;
+}
+.map-panel iframe {
+  border-radius: 5px;
+  color-scheme: light;
+}
+.media-list {
+  gap: 24px;
+}
+.media-item {
+  border-radius: 9px;
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 250ms,
+    background-color 250ms;
+}
+.media-art {
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--color-line);
+}
+.media-art-shade {
+  background: linear-gradient(0deg, #07231f9c, transparent 48%);
+}
+.media-play {
+  width: 50px;
+  height: 50px;
+  background: #07231fe8;
+  border-color: #ffffffab;
+  box-shadow: 0 0 0 4px #07231f20;
+}
+.media-play svg {
+  width: 18px;
+  height: 18px;
+  margin-inline-start: 2px;
+}
+.media-item:focus-visible .media-play,
+.media-item:active .media-play {
+  background: var(--brand-leaf);
+  color: var(--brand-greenhouse);
+}
+.media-item:active {
+  transform: translateY(-1px) scale(0.99);
+  border-color: var(--color-primary);
+}
+.media-card-body {
+  padding: 22px;
+}
+.media-card-body h3 {
+  font-size: clamp(19px, 1.45vw, 22px);
+  font-weight: 500;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.media-card-eyebrow {
+  line-height: 1.7;
+  letter-spacing: 0.055em;
+}
+.media-card-cta {
+  min-height: 44px;
+  font-weight: 600;
+}
+.site-footer {
+  background: var(--footer-surface);
+}
+.footer-brand > p + p {
+  margin-top: 10px;
+}
+.footer-bottom {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  padding-block: 16px;
+  padding-inline-end: 56px;
+}
+@media (max-width: 767px) {
+  .home-page .hero-grid {
+    gap: 14px;
+  }
+  .home-page .hero-resource {
+    margin-top: 18px;
+  }
+  .home-page .hero-bottom {
+    margin-top: 12px;
+  }
+  .home-page .section-topline {
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .home-page .process-flow {
+    margin-top: 30px;
+  }
+  .section-thread {
+    top: -26px;
+    height: 18px;
+  }
+  .media-list {
+    gap: 24px;
+  }
+  .media-card-body,
+  .media-item--compact .media-card-body {
+    padding: 19px 20px;
+  }
+  .media-card-body h3,
+  .media-item--compact h3 {
+    font-size: 21px;
+  }
+  .media-card-body p {
+    margin-bottom: 14px;
+  }
+  .media-play {
+    width: 46px;
+    height: 46px;
+  }
+  .footer-statement {
+    padding-block: 28px;
+  }
+  .footer-bottom {
+    align-items: center;
+    gap: 2px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .media-item:active {
+    transform: none;
+  }
+}

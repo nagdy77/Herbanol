@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/assets/logos/ChatGPT Image Sep 20, 2026, 07_01_48 PM.png"
+    />
+    <script>
+      // Paint the entrance before React/CSS loads; never block on network requests.
+      document.documentElement.dataset.intro = 'pending'
+      document.documentElement.dataset.introStarted = String(performance.now())
+      setTimeout(() => {
+        document.documentElement.dataset.intro = 'done'
+        document.getElementById('root')?.removeAttribute('inert')
+      }, 2500)
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('herbanol-theme') === 'dark' ? 'dark' : 'light'
+      } catch {
+        document.documentElement.dataset.theme = 'light'
+      }
+    </script>
+    <style>
+      #intro-root {
+        display: none;
+      }
+      html[data-intro='pending'] #intro-root {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        background: #07231f;
+      }
+      html[data-intro='pending'] #intro-root:has(.intro-loader) {
+        background: transparent;
+      }
+      html[data-intro='pending'] {
+        overflow: hidden;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Herbanol agricultural biotechnology — Waste less, Grow more."
+    />
+    <meta name="theme-color" content="#247044" />
+    <title>Herbanol — Waste less, Grow more</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="intro-root" aria-hidden="true"></div>
+    <script>
+      if (document.documentElement.dataset.intro === 'pending') {
+        document.getElementById('root').setAttribute('inert', '')
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

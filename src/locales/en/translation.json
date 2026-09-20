@@ -1,0 +1,278 @@
+{
+  "brand": {
+    "name": "Herbanol",
+    "tagline": "Waste less, Grow more",
+    "description": "Biotechnology-driven agriculture",
+    "identity": "Herbanol Agricultural Biotechnological Solutions"
+  },
+  "common": {
+    "loading": "Loading Herbanol…",
+    "skip": "Skip to content",
+    "menu": "Open navigation",
+    "close": "Close navigation",
+    "navigation": "Main navigation",
+    "language": "Select language",
+    "english": "EN",
+    "arabic": "عربي",
+    "contact": "Let’s talk",
+    "explore": "Explore Herbanol Peat",
+    "learn": "Discover our approach",
+    "back": "Back to home",
+    "external": "Opens in a new tab",
+    "home": "Home",
+    "notFound": "This page hasn’t taken root.",
+    "notFoundText": "The page you’re looking for isn’t here. Let’s head back home.",
+    "copyright": "© {{year}} Herbanol. All rights reserved.",
+    "scroll": "Scroll to discover",
+    "email": "Email us",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "video": "Watch video",
+    "number": "No.",
+    "pause": "Pause rotating headline",
+    "resume": "Resume rotating headline",
+    "darkTheme": "Switch to dark theme",
+    "lightTheme": "Switch to light theme",
+    "contacts": "Contact Herbanol",
+    "closeContacts": "Close contact options",
+    "whatsapp": "WhatsApp",
+    "logo": "Herbanol brand artwork"
+  },
+  "nav": {
+    "about": "About us",
+    "products": "Herbanol Peat",
+    "applications": "Applications",
+    "technology": "Our approach",
+    "sustainability": "Sustainability",
+    "achievements": "Media",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Where nature meets biotechnology",
+    "line1": "Waste less,",
+    "line2": "Grow more.",
+    "description": "Sustainable agricultural products, rooted in local resources. Biotechnology with a purpose.",
+    "imageAlt": "English Herbanol Peat presentation with the product in a greenhouse",
+    "caption": "Local resources. New possibilities.",
+    "imageLabel": "Herbanol Peat / 65 L",
+    "science": "Biotechnology",
+    "nature": "Agriculture",
+    "environment": "Sustainability",
+    "phrases": [
+      "Grow more.",
+      "Better roots.",
+      "Smarter farming.",
+      "Greener future.",
+      "Sustainable growth."
+    ],
+    "ambition": "Our ambition, in a few words",
+    "resourceTitle": "Local by nature",
+    "resourceText": "Palm fibers. Biotechnology. New growing possibilities."
+  },
+  "about": {
+    "eyebrow": "Rooted in possibility",
+    "title": "Better growing starts",
+    "accent": "with a different perspective.",
+    "description": "Herbanol is a biotechnology-driven agricultural company creating sustainable agricultural products from local resources.",
+    "missionLabel": "Our mission",
+    "mission": "To provide high-quality, biotechnology-based agricultural inputs that enhance productivity, reduce reliance on imports, and support sustainable farming.",
+    "visionLabel": "Our vision",
+    "vision": "To lead the region in sustainable agricultural substrates and innovative biotech solutions that strengthen food security and promote environmental resilience.",
+    "values": {
+      "innovation": "Innovation",
+      "sustainability": "Sustainability",
+      "quality": "Quality"
+    },
+    "support": "Agriculture, biotechnology, and environmental sustainability—working together.",
+    "valueNotes": {
+      "innovation": "Biotechnology-based agricultural inputs.",
+      "sustainability": "Local resources and sustainable farming.",
+      "quality": "A focus on high-quality growing media."
+    }
+  },
+  "product": {
+    "eyebrow": "Meet your growing medium",
+    "title": "Herbanol",
+    "accent": "Peat.",
+    "description": "Carefully selected palm fibers. Natural biotechnology. A growing medium developed as a local alternative to imported peat moss and coco peat.",
+    "alt": "Herbanol Peat growing medium, 65-liter product bag",
+    "volume": "Net volume",
+    "unit": "L",
+    "dataLink": "View product analysis",
+    "features": {
+      "lightweight": "Lightweight",
+      "aeration": "High root aeration",
+      "water": "Excellent water-holding capacity",
+      "moisture": "Balanced moisture distribution",
+      "salinity": "Low salinity",
+      "stable": "Biologically stable",
+      "eco": "Environmentally friendly",
+      "biodegradable": "Biodegradable"
+    },
+    "detail": "Palm fibers, reimagined.",
+    "organic": "Organic matter",
+    "moisture": "Moisture content",
+    "analysisNote": "Approximate values from the product analysis.",
+    "materialLabel": "The starting point",
+    "materialText": "Carefully selected palm fibers",
+    "methodLabel": "The approach",
+    "methodText": "Natural biological treatment",
+    "formatLabel": "The format",
+    "formatText": "65 L growing medium",
+    "calloutRoot": "High root aeration",
+    "calloutWater": "Water-holding capacity",
+    "calloutStable": "Biologically stable",
+    "showcaseLabel": "Explore the medium",
+    "support": "A local alternative to imported peat moss and coco peat."
+  },
+  "applications": {
+    "eyebrow": "Room to grow",
+    "title": "One medium.",
+    "accent": "Many possibilities.",
+    "description": "A growing medium for a range of agricultural applications.",
+    "items": {
+      "nurseries": "Agricultural nurseries",
+      "greenhouses": "Greenhouses",
+      "hydroponics": "Soilless agriculture / Hydroponics",
+      "potatoes": "Potato export stations and companies",
+      "mushrooms": "Mushroom production farms"
+    },
+    "index": "Application {{number}}"
+  },
+  "process": {
+    "eyebrow": "Biotechnology, naturally",
+    "title": "From local fibers",
+    "accent": "to growing possibilities.",
+    "description": "Herbanol Peat is produced using natural biotechnology techniques based on the biological treatment of carefully selected palm fibers.",
+    "steps": {
+      "fibers": {
+        "title": "Selected palm fibers",
+        "text": "Carefully selected palm fibers form the basis of the growing medium."
+      },
+      "biology": {
+        "title": "Biological treatment",
+        "text": "Natural biotechnology techniques are applied to the palm fibers."
+      },
+      "medium": {
+        "title": "Herbanol Peat",
+        "text": "A growing medium developed as a local alternative to peat moss and coco peat."
+      }
+    },
+    "diagram": "Palm fibers → Biological treatment → Growing medium",
+    "footnote": "From selected palm fibers to a biologically treated growing medium.",
+    "material": "Local resources",
+    "method": "Natural biotechnology",
+    "outcome": "Agricultural applications"
+  },
+  "sustainability": {
+    "eyebrow": "A considered approach",
+    "title": "Local resources.",
+    "accent": "Lasting purpose.",
+    "description": "Agriculture, biotechnology, and environmental sustainability are connected in everything we set out to do.",
+    "localTitle": "Rooted in local resources",
+    "localText": "We develop agricultural products using local resources, with a mission to reduce reliance on imports.",
+    "natureTitle": "Designed with nature in mind",
+    "natureText": "Herbanol Peat is an environmentally friendly, biodegradable growing medium.",
+    "futureTitle": "A vision for the future",
+    "futureText": "Our vision is to strengthen food security and promote environmental resilience through sustainable substrates and biotech solutions.",
+    "graphicLabel": "Nature + biotechnology"
+  },
+  "science": {
+    "eyebrow": "A closer look",
+    "title": "The science",
+    "accent": "beneath the surface.",
+    "description": "An open look at the approximate composition and characteristics of Herbanol Peat.",
+    "caption": "Herbanol Peat — approximate product analysis",
+    "parameter": "Parameter",
+    "value": "Approximate value",
+    "source": "Source: Herbanol product analysis. Values are approximate.",
+    "datasheet": "According to the company datasheet",
+    "freeFrom": "The product is free from pathogens, nematodes, harmful fungi, and weed seeds.",
+    "labels": {
+      "moisture": "Moisture content",
+      "ph": "pH",
+      "ec": "Electrical conductivity",
+      "ammonium": "Ammonium nitrogen",
+      "nitrate": "Nitrate nitrogen",
+      "nitrogen": "Total nitrogen",
+      "organic": "Organic matter",
+      "carbon": "Organic carbon",
+      "ratio": "C:N ratio",
+      "phosphorus": "P₂O₅",
+      "potassium": "K₂O",
+      "water": "Water-holding capacity",
+      "ash": "Ash content"
+    },
+    "spotlight": "Analysis highlights",
+    "focusLabel": "Explore a parameter",
+    "focusHint": "Select a row to bring its exact approximate value into focus.",
+    "phNote": "Approximate pH range",
+    "waterNote": "Approximate water-holding capacity",
+    "readout": "Selected parameter",
+    "unitNote": "Values shown as supplied in the product analysis.",
+    "rowLabel": "Inspect {{parameter}}",
+    "countLabel": "Product composition & characteristics"
+  },
+  "media": {
+    "eyebrow": "Watch Herbanol",
+    "title": "Stories worth",
+    "accent": "a closer look.",
+    "description": "Three ways to connect with Herbanol on film. Open a video, explore the company, and continue the conversation.",
+    "videoDescription": "Watch story",
+    "linkedin": "Follow our journey",
+    "note": "Media coverage",
+    "cardDescription": "Open this Herbanol video on Facebook and explore more from the company.",
+    "featured": "In focus",
+    "collection": "The video collection",
+    "externalNote": "Videos open on Facebook in a new tab.",
+    "watch": "Open video",
+    "facebook": "Herbanol on Facebook",
+    "placeholder": "Watch on Facebook",
+    "coverAlt": "Original Facebook video cover: {{title}}",
+    "titles": [
+      "The Herbanol team’s project at Ain Shams University",
+      "Local manufacturing with international quality: an import alternative with the Herbanol team at Ain Shams University",
+      "Herbanol founder Omar Osama shares the story behind his idea"
+    ],
+    "publishers": [
+      "DMC Entertainment",
+      "Ministry of Higher Education and Scientific Research (Egypt)",
+      "DMC Entertainment"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Let’s grow together",
+    "title": "The next conversation",
+    "accent": "starts here.",
+    "description": "Get in touch to learn more about Herbanol and our growing medium.",
+    "cta": "Start a conversation",
+    "detail": "Herbanol Peat · Applications · Product analysis",
+    "panelNote": "Rooted in local resources"
+  },
+  "footer": {
+    "description": "At the intersection of biotechnology, agriculture, and environmental sustainability.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "statement": "Rooted in nature.\nDriven by biotechnology.",
+    "focusLabel": "Our focus",
+    "focusText": "Biotechnology. Agriculture. Environmental sustainability.",
+    "find": "Find us",
+    "top": "Back to top",
+    "developedBy": "Developed by :",
+    "developerLabel": "Developed by ElNagdy — LinkedIn"
+  },
+  "meta": {
+    "title": "Herbanol — Waste less, Grow more",
+    "description": "Discover Herbanol Peat: a biotechnology-based growing medium made from carefully selected palm fibers. Sustainable agriculture, rooted in local resources."
+  },
+  "location": {
+    "eyebrow": "Stay connected",
+    "title": "Find us.",
+    "accent": "Let’s talk.",
+    "description": "Explore our location on the map and contact Herbanol to discuss our agricultural growing medium.",
+    "pendingTitle": "Location details coming soon",
+    "pendingText": "Our map will be available here. In the meantime, email us for location information.",
+    "cta": "Ask for location details",
+    "mapTitle": "Herbanol location on Google Maps"
+  }
+}
