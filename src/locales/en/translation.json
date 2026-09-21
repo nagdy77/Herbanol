@@ -275,6 +275,11 @@
   },
   "partners": {
     "title": "Partners & Achievements",
-    "image": "Partners and achievements image {{number}}"
+    "image": "Partners and achievements image {{number}}",
+    "eyebrow": "PARTNERS • PROGRESS • RECOGNITION",
+    "heading": "Built together.",
+    "accent": "Growing further.",
+    "description": "Collaborations, programs and achievements that continue to shape Herbanol’s journey.",
+    "words": ["Partnerships", "Programs", "Milestones", "Recognition"]
   }
 }

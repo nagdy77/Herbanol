@@ -18,6 +18,17 @@ test('automatic logo strip loops, preserves images and supports reduced motion',
       .toBeGreaterThan(0)
     await expect(img).toHaveCSS('object-fit', 'contain')
   }
+  await expect(page.locator('#partners-title')).toHaveText(
+    'Built together.Growing further.',
+  )
+  const logoBox = await images.first().boundingBox()
+  expect(logoBox!.height).toBeCloseTo(
+    testInfo.project.name === 'mobile' ? 52 : 64,
+    2,
+  )
+  const word = page.locator('.partners-word > span').last()
+  const originalWord = await word.textContent()
+  await expect(word).not.toHaveText(originalWord!, { timeout: 6500 })
   const track = page.locator('.partners-track')
   const before = await track.evaluate((el) => getComputedStyle(el).transform)
   await expect
@@ -40,10 +51,17 @@ test('automatic logo strip loops, preserves images and supports reduced motion',
 
   await expect(track).toHaveCSS('animation-direction', 'normal')
   await expect(page.locator('#partners-title')).toHaveText(
-    'Partners & Achievements',
+    'Built together.Growing further.',
   )
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await expect(track).toHaveCSS('animation-name', 'none')
+  await expect(word).toHaveText('Partnerships')
+  await expect(page.locator('.partners-particle').first()).toHaveCSS(
+    'animation-name',
+    'none',
+  )
+  await expect(page.locator('.partners-glow')).toHaveCSS('transform', 'none')
+  await strip.screenshot({ path: testInfo.outputPath('partners-reduced.png') })
   await expect(page.locator('.partners-group').nth(1)).toBeHidden()
   expect(
     await page.evaluate(
