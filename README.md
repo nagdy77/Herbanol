@@ -51,4 +51,6 @@ Light is the default regardless of OS preference. The navbar toggle persists `he
 
 ## Deployment
 
+The Partners & Achievements strip automatically discovers PNG, JPEG, SVG, WebP, AVIF and GIF images under `src/assets/logos/` on each Vite build, without filename conventions. Documents such as PDFs remain untouched and are not rendered as images. The repeated visual group is hidden from assistive technology; reduced motion provides a static, horizontally scrollable strip.
+
 Build and publish `dist` to a static host with an `index.html` fallback for client-side routes. Supplied PNGs remain intact and are relatively large; only the active-language hero loads and the product image loads lazily.

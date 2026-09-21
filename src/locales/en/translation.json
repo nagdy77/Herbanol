@@ -274,5 +274,9 @@
     "pendingText": "Our map will be available here. In the meantime, email us for location information.",
     "cta": "Ask for location details",
     "mapTitle": "Herbanol location on Google Maps"
+  },
+  "partners": {
+    "title": "Partners & Achievements",
+    "image": "Partners and achievements image {{number}}"
   }
 }

@@ -8,6 +8,18 @@ export default function NavigationEffects() {
   const { i18n } = useTranslation()
 
   useEffect(() => {
+    // A full-load entrance temporarily makes the app inert. Restore anchor
+    // focus once it releases, rather than trying to focus an inert element.
+    const restoreFocus = () => {
+      if (hash && document.documentElement.dataset.intro !== 'pending') {
+        document.getElementById(hash.slice(1))?.focus({ preventScroll: true })
+      }
+    }
+    const observer = new MutationObserver(restoreFocus)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-intro'],
+    })
     const frame = requestAnimationFrame(() => {
       if (hash) {
         const target = document.getElementById(hash.slice(1))
@@ -18,7 +30,10 @@ export default function NavigationEffects() {
       }
       ScrollTrigger.refresh()
     })
-    return () => cancelAnimationFrame(frame)
+    return () => {
+      cancelAnimationFrame(frame)
+      observer.disconnect()
+    }
   }, [pathname, hash, key])
 
   useEffect(() => {

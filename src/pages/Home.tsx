@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useHomeMotion } from '../hooks/useHomeMotion'
 import Hero from '../components/sections/Hero'
 import About from '../components/sections/About'
+import Partners from '../components/sections/Partners'
 import Product from '../components/sections/Product'
 import Applications from '../components/sections/Applications'
 import Process from '../components/sections/Process'
@@ -20,6 +21,7 @@ export default function Home() {
       <NavigationEffects />
       <Hero />
       <About />
+      <Partners />
       <Product />
       <Applications />
       <Process />

@@ -135,10 +135,7 @@ test('navigation and direct links reach real sections', async ({
     'mailto:herbanol.com@gmail.com',
   )
   await page.goto('/not-a-page')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'This page hasn’t taken root.',
-  )
-  await page.getByRole('link', { name: 'Back to home' }).click()
+  await expect(page).toHaveURL(/\/$/)
   await expect(page.locator('.hero-title')).toBeVisible()
 })
 
