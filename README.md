@@ -47,7 +47,7 @@ GSAP/ScrollTrigger handles scoped staggered reveals, SVG paths, layered backgrou
 
 ## Theme and contacts
 
-Light is the default regardless of OS preference. The navbar toggle persists `herbanol-theme` when storage is available, and shared semantic tokens in `theme.css` drive both themes. The floating contact widget includes verified email, LinkedIn and Facebook links. `company.whatsapp` is intentionally null and hidden until a verified link is supplied.
+Light is the default regardless of OS preference. The navbar toggle persists `herbanol-theme` when storage is available, and shared semantic tokens in `theme.css` drive both themes. The floating contact widget includes verified email, WhatsApp, LinkedIn and Facebook links. WhatsApp uses the supplied Egyptian number in international format and a localized, URL-encoded draft message; opening the link does not send it.
 
 ## Deployment
 

@@ -94,16 +94,30 @@ test('light default, persistent dark theme, bilingual full-page visual review an
       })
       await page.locator('.floating-contact-toggle').click()
       const links = page.locator('.floating-contact-links a')
-      await expect(links).toHaveCount(3)
+      await expect(links).toHaveCount(4)
       await expect(links.nth(0)).toHaveAttribute(
         'href',
         'mailto:herbanol.com@gmail.com',
       )
       await expect(links.nth(1)).toHaveAttribute(
         'href',
-        'https://www.linkedin.com/company/herbanol-company/',
+        'https://wa.me/201062097801?text=' +
+          encodeURIComponent(
+            locale === 'en'
+              ? 'Hello Herbanol, I’d like to know more about your products.'
+              : 'مرحباً هيربانول، أود معرفة المزيد عن منتجاتكم.',
+          ),
+      )
+      await expect(links.nth(1)).toHaveAttribute('target', '_blank')
+      await expect(links.nth(1)).toHaveAttribute('rel', 'noopener noreferrer')
+      await expect(links.nth(1)).toHaveAccessibleName(
+        locale === 'en' ? 'WhatsApp' : 'واتساب',
       )
       await expect(links.nth(2)).toHaveAttribute(
+        'href',
+        'https://www.linkedin.com/company/herbanol-company/',
+      )
+      await expect(links.nth(3)).toHaveAttribute(
         'href',
         'https://www.facebook.com/p/Herbanol-Company-61569695805373/',
       )

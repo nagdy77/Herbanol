@@ -37,7 +37,7 @@ export default function FloatingContacts() {
     },
     {
       key: 'whatsapp',
-      href: company.whatsapp,
+      href: `${company.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`,
       icon: <MessageCircle size={18} />,
       external: true,
     },
