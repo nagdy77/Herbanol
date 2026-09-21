@@ -1,11 +1,8 @@
 import { useCallback, type RefObject } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useScopedMotion } from './useScopedMotion'
 import { gsap } from '../utils/motion/gsap'
 
 export function useHomeMotion(scope: RefObject<HTMLDivElement | null>) {
-  const { i18n } = useTranslation()
-  const language = i18n.language
   const setup = useCallback(() => {
     // Scope every query to this route. Recreate after text direction/size changes.
     const select = gsap.utils.selector(scope)
@@ -203,7 +200,7 @@ export function useHomeMotion(scope: RefObject<HTMLDivElement | null>) {
         })
         gsap.to(select('.hero-dna'), {
           y: 65 * intensity,
-          rotation: language === 'ar' ? -8 : 8,
+          rotation: 8,
           ease: 'none',
           scrollTrigger: {
             trigger: select('.hero')[0],
@@ -261,6 +258,6 @@ export function useHomeMotion(scope: RefObject<HTMLDivElement | null>) {
       },
     )
     return () => motionMedia.revert()
-  }, [scope, language])
+  }, [scope])
   useScopedMotion(scope, setup)
 }

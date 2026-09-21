@@ -1,6 +1,6 @@
 # Herbanol
 
-A bilingual, frontend-only React/Vite company website. No backend, database, authentication, or API.
+An English-only, frontend-only React/Vite company website. No backend, database, authentication, or API.
 
 ## Development
 
@@ -14,26 +14,26 @@ Node.js 24 LTS and npm are required.
 - `npm run test:e2e`
 
 On Windows with a restricted PowerShell execution policy, use `npm.cmd`.
-Browser tests use the installed Microsoft Edge browser, in desktop and mobile emulation. They test both locales, exact product values, routing, asset loading, motion preferences, and console errors. Test artifacts are ignored by Git.
+Browser tests use the installed Microsoft Edge browser, in desktop and mobile emulation. They test English-only behavior, legacy language preferences, exact product values, routing, asset loading, motion preferences, and console errors. Test artifacts are ignored by Git.
 
 ## Content and architecture
 
 - Homepage sections: `src/components/sections`
 - Layout and reusable UI: `src/components/layout`, `src/components/ui`
-- Translation content: `src/locales/en/translation.json`, `src/locales/ar/translation.json`
-- i18next setup and language persistence: `src/i18n.ts`
+- English content: `src/locales/en/translation.json`
+- English-only i18next setup: `src/i18n.ts`
 - Verified contact/media links: `src/data/company.ts`
 - Exact approximate analysis values: `src/data/product.ts`
 - Theme, layouts, and section styles: `src/styles`
 - Motion hooks: `src/hooks`; shared GSAP/Lenis modules: `src/utils/motion`
 
-English is the default. Arabic switches document language, direction, and hero image. Language choice persists when browser storage is available.
+The website uses English and left-to-right layout only. Obsolete saved language preferences are cleared; no language switcher is displayed.
 
-Existing page URLs map to their corresponding homepage sections. Unknown URLs show a translated 404.
+Existing page URLs map to their corresponding homepage sections. Unknown URLs redirect to the homepage.
 
 ## Assets and content boundaries
 
-Original product and English/Arabic hero PNGs are used without image modifications. The standalone plant/DNA logo in `src/assets/logos` is used unchanged in the navbar, mobile menu, footer and favicon. A neutral backing preserves its legibility in both themes; no crop, recoloring or artwork edits are applied.
+Original product and English hero PNGs are used without image modifications. The standalone plant/DNA logo in `src/assets/logos` is used unchanged in the navbar, mobile menu, footer and favicon. A neutral backing preserves its legibility in both themes; no crop, recoloring or artwork edits are applied.
 
 All company/product copy derives from the supplied information. Mission and vision remain aspirations. Datasheet free-from claims are explicitly attributed to the company datasheet. Media titles use excerpts from the original Arabic Facebook titles/captions, with English translations and publisher attribution. No awards, customers, partners, or certifications are invented.
 

@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
   )
 })
 
-test('light default, persistent dark theme, bilingual full-page visual review and contacts', async ({
+test('light default, persistent dark theme, full-page visual review and contacts', async ({
   page,
   isMobile,
 }, testInfo) => {
@@ -32,13 +32,7 @@ test('light default, persistent dark theme, bilingual full-page visual review an
   )
   await expect(page.locator('#location a[href*="linkedin"]')).toHaveCount(0)
   await expect(page.locator('.phrase-strike')).toHaveCount(0)
-  for (const locale of ['en', 'ar']) {
-    await page
-      .getByRole('button', {
-        name: locale === 'en' ? 'EN' : 'عربي',
-        exact: true,
-      })
-      .click()
+  for (const locale of ['en']) {
     for (const theme of ['light', 'dark']) {
       if ((await page.locator('html').getAttribute('data-theme')) !== theme)
         await page.locator('.theme-toggle').click()
@@ -52,9 +46,7 @@ test('light default, persistent dark theme, bilingual full-page visual review an
       await expect(credit).toHaveAttribute('target', '_blank')
       await expect(credit).toHaveAttribute('rel', 'noopener noreferrer')
       await expect(credit).toHaveAccessibleName(
-        locale === 'en'
-          ? 'Developed by ElNagdy — LinkedIn'
-          : 'تطوير ElNagdy — لينكدإن',
+        'Developed by ElNagdy — LinkedIn',
       )
       await expect
         .poll(() =>
@@ -103,16 +95,12 @@ test('light default, persistent dark theme, bilingual full-page visual review an
         'href',
         'https://wa.me/201062097801?text=' +
           encodeURIComponent(
-            locale === 'en'
-              ? 'Hello Herbanol, I’d like to know more about your products.'
-              : 'مرحباً هيربانول، أود معرفة المزيد عن منتجاتكم.',
+            'Hello Herbanol, I’d like to know more about your products.',
           ),
       )
       await expect(links.nth(1)).toHaveAttribute('target', '_blank')
       await expect(links.nth(1)).toHaveAttribute('rel', 'noopener noreferrer')
-      await expect(links.nth(1)).toHaveAccessibleName(
-        locale === 'en' ? 'WhatsApp' : 'واتساب',
-      )
+      await expect(links.nth(1)).toHaveAccessibleName('WhatsApp')
       await expect(links.nth(2)).toHaveAttribute(
         'href',
         'https://www.linkedin.com/company/herbanol-company/',
@@ -131,7 +119,7 @@ test('light default, persistent dark theme, bilingual full-page visual review an
   }
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
   if (isMobile) {
     await page.locator('.menu-toggle').click()
     await expect(page.locator('#mobile-navigation .brand-logo')).toBeVisible()

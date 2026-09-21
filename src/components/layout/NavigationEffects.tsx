@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { ScrollTrigger } from '../../utils/motion/gsap'
 
 export default function NavigationEffects() {
   const { pathname, hash, key } = useLocation()
-  const { i18n } = useTranslation()
 
   useEffect(() => {
     // A full-load entrance temporarily makes the app inert. Restore anchor
@@ -35,11 +33,6 @@ export default function NavigationEffects() {
       observer.disconnect()
     }
   }, [pathname, hash, key])
-
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => ScrollTrigger.refresh())
-    return () => cancelAnimationFrame(frame)
-  }, [i18n.language])
 
   return null
 }

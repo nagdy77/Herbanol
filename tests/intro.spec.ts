@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-for (const locale of ['en', 'ar']) {
+for (const locale of ['en']) {
   test(`fresh ${locale} entrance, refresh replay and anchor navigation`, async ({
     page,
   }, testInfo) => {
@@ -13,7 +13,7 @@ for (const locale of ['en', 'ar']) {
     await expect(page.locator('.intro-loader')).toBeVisible()
     await expect(page.locator('#root')).toHaveAttribute('inert', '')
     await expect(page.locator('.intro-brand p')).toHaveText(
-      locale === 'en' ? 'Waste less, Grow more' : 'هدر أقل، ونمو أفضل',
+      'Waste less, Grow more',
     )
     await expect(page.locator('.intro-logo')).toHaveAttribute('src', /07_01_48/)
     await page.screenshot({ path: testInfo.outputPath('entrance.png') })
@@ -23,7 +23,7 @@ for (const locale of ['en', 'ar']) {
     await expect(page.locator('#root')).not.toHaveAttribute('inert')
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
     await page.locator('.theme-toggle').click()
-    await page.locator('.language-switcher button').first().click()
+
     await page.goto('/#product')
     await expect(page.locator('.intro-loader')).toHaveCount(0)
     await page.reload()

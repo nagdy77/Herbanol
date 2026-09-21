@@ -742,30 +742,6 @@
   margin-top: 48px;
   color: #62784e;
 }
-:root[dir='rtl'] .hero-orbit {
-  transform: translate(50%, -50%);
-}
-:root[lang='ar'] .hero-title {
-  font-size: clamp(48px, 5.5vw, 78px);
-}
-:root[lang='ar'] .title-line {
-  padding-block: 0;
-  margin-bottom: 0;
-}
-:root[lang='ar'] .title-line--accent {
-  font-style: normal;
-  letter-spacing: 0;
-}
-:root[lang='ar'] .product-copy h2 {
-  font-size: clamp(55px, 6vw, 85px);
-}
-:root[lang='ar'] .product-copy h2 em {
-  color: #d3e6ad;
-}
-:root[lang='ar'] .product-stage-label,
-:root[lang='ar'] .nature-art-label {
-  letter-spacing: 0;
-}
 @media (min-width: 1440px) {
   .hero {
     padding-top: 78px;
@@ -907,9 +883,6 @@
   }
   .contact-panel {
     padding-inline: 40px;
-  }
-  :root[lang='ar'] .hero-title {
-    font-size: 68px;
   }
 }
 @media (max-width: 767px) {
@@ -1200,14 +1173,5 @@
   .contact-email {
     margin-top: 35px;
     font-size: 10px;
-  }
-  :root[lang='ar'] .hero-title {
-    font-size: clamp(44px, 10vw, 64px);
-  }
-  :root[lang='ar'] .hero-eyebrow {
-    font-size: 10px;
-  }
-  :root[lang='ar'] .product-copy h2 {
-    font-size: 66px;
   }
 }

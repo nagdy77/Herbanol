@@ -29,7 +29,7 @@ const exactValues = [
   '11.73%',
 ]
 
-for (const language of ['en', 'ar']) {
+for (const language of ['en']) {
   test(
     language + ': content, assets, layout, and persistence',
     async ({ page }, testInfo) => {
@@ -40,19 +40,15 @@ for (const language of ['en', 'ar']) {
       })
       await page.emulateMedia({ reducedMotion: 'reduce' })
       await page.goto('/')
-      if (language === 'ar')
-        await page.getByRole('button', { name: 'عربي', exact: true }).click()
+
       await expect(page.locator('html')).toHaveAttribute('lang', language)
-      await expect(page.locator('html')).toHaveAttribute(
-        'dir',
-        language === 'ar' ? 'rtl' : 'ltr',
-      )
+      await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
       await expect(page.locator('h1')).toHaveAccessibleName(
-        language === 'ar' ? 'هدر أقل، ونمو أفضل' : 'Waste less, Grow more',
+        'Waste less, Grow more',
       )
       await expect(page.locator('.hero-image-frame img')).toHaveAttribute(
         'src',
-        new RegExp('herbanol-hero-' + language),
+        /herbanol-hero-en/,
       )
       await expect(page.locator('tbody td')).toHaveText(exactValues)
       await expect(page.locator('.media-item')).toHaveCount(3)
@@ -150,13 +146,13 @@ test('motion, counters, and live reduced-motion changes', async ({
   await expect(page.locator('.hero-image-frame')).toHaveCSS('opacity', '1')
   if (!isMobile) await expect(page.locator('html')).toHaveClass(/lenis/)
   else await expect(page.locator('html')).not.toHaveClass(/lenis/)
-  await page.locator('.product-metrics').scrollIntoViewIfNeeded()
-  await expect(
-    page.locator('.metric-value').first().locator('[aria-hidden]'),
-  ).toHaveText('90%')
-  await expect(
-    page.locator('.metric-value').nth(1).locator('[aria-hidden]'),
-  ).toHaveText('49%')
+  await page.locator('.product-scientific-strip').scrollIntoViewIfNeeded()
+  await expect(page.locator('.product-scientific-strip strong')).toHaveText([
+    '110 L',
+    '6\u20136.5',
+    '0.5 dS/m',
+    '642%',
+  ])
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await expect(page.locator('html')).not.toHaveClass(/lenis/)
   await expect(page.locator('.product-image-scroll')).toHaveCSS(
@@ -164,25 +160,17 @@ test('motion, counters, and live reduced-motion changes', async ({
     'none',
   )
   await expect(page.locator('.about-description')).toHaveCSS('opacity', '1')
-  await page.getByRole('button', { name: 'عربي', exact: true }).click()
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
+
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
   expect(errors).toEqual([])
 })
 
-test('narrow layouts, language reversal, and keyboard navigation', async ({
-  page,
-}, testInfo) => {
+test('narrow layouts, and keyboard navigation', async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
   for (const width of [320, 768, 1024]) {
     await page.setViewportSize({ width, height: 900 })
-    for (const language of ['ar', 'en']) {
-      await page
-        .getByRole('button', {
-          name: language === 'ar' ? 'عربي' : 'EN',
-          exact: true,
-        })
-        .click()
+    for (const language of ['en']) {
       await expect(page.locator('html')).toHaveAttribute('lang', language)
       expect(
         await page.evaluate(
@@ -196,7 +184,7 @@ test('narrow layouts, language reversal, and keyboard navigation', async ({
         })
         await page
           .getByRole('button', {
-            name: language === 'ar' ? 'افتح قائمة التنقل' : 'Open navigation',
+            name: 'Open navigation',
           })
           .click()
         await page.keyboard.press('Escape')
@@ -210,9 +198,7 @@ test('narrow layouts, language reversal, and keyboard navigation', async ({
   await expect(page.locator('#main-content')).toBeFocused()
 })
 
-test('language switching remains usable when storage is blocked', async ({
-  page,
-}) => {
+test('English remains usable when storage is blocked', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(window, 'localStorage', {
       get() {
@@ -222,9 +208,9 @@ test('language switching remains usable when storage is blocked', async ({
   })
   await page.goto('/')
   await expect(page.locator('h1')).toBeVisible()
-  await page.getByRole('button', { name: 'عربي', exact: true }).click()
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
-  await page.getByRole('button', { name: 'EN', exact: true }).click()
+
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
+
   await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
 })
 
@@ -302,16 +288,14 @@ test('media links, scientific readout, layered images, and connected location', 
       .locator('#' + id)
       .screenshot({ path: testInfo.outputPath(id + '.png'), scale: 'css' })
   }
-  await page.getByRole('button', { name: 'عربي', exact: true }).click()
+
   await page.locator('#science').scrollIntoViewIfNeeded()
   await expect(page.locator('.readout-content strong')).toHaveText('642%')
   await expect(page.locator('.map-panel iframe')).toHaveAttribute(
     'title',
-    'موقع هيربانول على خرائط جوجل',
+    'Herbanol location on Google Maps',
   )
-  await expect(page.locator('.media-card-body h3').first()).toHaveText(
-    'مشروع فريق "Herbanol" من جامعة عين شمس',
-  )
+
   expect(errors).toEqual([])
 })
 
@@ -345,8 +329,8 @@ test('rotating headline can pause and respects reduced motion', async ({
     '0',
   )
   await expect(page.locator('.phrase-controls button')).toHaveCount(0)
-  await page.getByRole('button', { name: 'عربي', exact: true }).click()
-  await expect(page.locator('.rotating-phrase')).toHaveText('ونمو أفضل')
+
+  await expect(page.locator('.rotating-phrase')).toHaveText('Grow more.')
 })
 
 test('missing cover uses a branded fallback rather than website imagery', async ({
@@ -362,4 +346,20 @@ test('missing cover uses a branded fallback rather than website imagery', async 
     page.locator('.media-item').first().locator('.media-art img'),
   ).toHaveCount(0)
   await expect(page.locator('.media-cover-placeholder svg')).toHaveCount(1)
+})
+
+test('legacy language preferences cannot restore the removed locale', async ({
+  page,
+}) => {
+  await page.addInitScript(() =>
+    localStorage.setItem('herbanol-language', 'ar'),
+  )
+  await page.goto('/')
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
+  await expect(page.locator('.language-switcher')).toHaveCount(0)
+  await expect(page.locator('h1')).toHaveAccessibleName('Waste less, Grow more')
+  await expect(page.locator('body')).not.toContainText(/[\u0600-\u06ff]/)
+  await page.reload()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
 })

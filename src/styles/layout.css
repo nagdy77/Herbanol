@@ -61,28 +61,6 @@
   align-items: center;
   gap: 23px;
 }
-.language-switcher {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-.language-switcher button {
-  padding: 8px 5px;
-  min-height: 44px;
-  color: var(--color-muted);
-}
-.language-switcher button[aria-pressed='true'] {
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-.language-switcher > span {
-  color: #b7bfaf;
-  margin-inline: 2px;
-}
 .header-contact {
   display: flex;
   align-items: center;

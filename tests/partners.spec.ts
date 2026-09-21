@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test('automatic logo strip loops, preserves images and supports RTL/reduced motion', async ({
+test('automatic logo strip loops, preserves images and supports reduced motion', async ({
   page,
 }, testInfo) => {
   await page.goto('/')
@@ -33,11 +33,15 @@ test('automatic logo strip loops, preserves images and supports RTL/reduced moti
     elements.map((el) => (el as HTMLImageElement).src),
   )
   expect(sources[0]).not.toBe(sources.at(-1))
+  const brand = await page.locator('.brand-logo').first().getAttribute('src')
+  expect(sources.every((src) => !src.endsWith(brand!))).toBe(true)
   await page.locator('.theme-toggle').click()
   await strip.screenshot({ path: testInfo.outputPath('partners-dark.png') })
-  await page.getByRole('button', { name: 'عربي', exact: true }).click()
-  await expect(track).toHaveCSS('animation-direction', 'reverse')
-  await expect(page.locator('#partners-title')).toHaveText('الشركاء والإنجازات')
+
+  await expect(track).toHaveCSS('animation-direction', 'normal')
+  await expect(page.locator('#partners-title')).toHaveText(
+    'Partners & Achievements',
+  )
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await expect(track).toHaveCSS('animation-name', 'none')
   await expect(page.locator('.partners-group').nth(1)).toBeHidden()

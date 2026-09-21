@@ -1,0 +1,203 @@
+﻿/* Product showcase: scoped to preserve the surrounding homepage. */
+.home-page .product-section {
+  padding-block: 40px 32px;
+}
+.home-page .product-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 3vw, 48px);
+}
+.home-page .product-copy h2 {
+  font-size: clamp(76px, 8.3vw, 120px);
+  font-weight: 450;
+  margin-block: 20px 26px;
+}
+.home-page .product-description {
+  max-width: 540px;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.75;
+}
+.home-page .product-features {
+  font-size: 14px;
+  gap: 19px 20px;
+  margin-block: 28px 20px;
+}
+.home-page .product-features li {
+  align-items: flex-start;
+  gap: 10px;
+}
+.home-page .product-features svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.home-page .product-data-link {
+  font-size: 14px;
+}
+.home-page .product-stage {
+  min-height: 640px;
+  width: 100%;
+  max-width: none;
+}
+.home-page .product-image-scroll {
+  width: 94%;
+}
+.home-page .product-image-scroll img {
+  max-height: 670px;
+}
+.home-page .product-orbit {
+  width: 88%;
+}
+.home-page .product-orbit--two {
+  width: 102%;
+}
+.home-page .product-stage-label {
+  top: 0;
+  inset-inline-start: 20%;
+  font-size: 11px;
+}
+.home-page .product-callout {
+  font-size: 12px;
+  max-width: 168px;
+  padding: 12px;
+  gap: 10px;
+}
+.home-page .product-callout > svg {
+  flex-shrink: 0;
+}
+.home-page .product-callout--roots {
+  inset-inline-start: 0;
+  top: 18%;
+}
+.home-page .product-callout--water {
+  inset-inline-end: 0;
+  top: 42%;
+}
+.home-page .product-callout--water span {
+  font-size: 11px;
+}
+.home-page .product-callout--stable {
+  inset-inline-start: 0;
+  bottom: 16%;
+}
+.home-page .volume-badge {
+  inset-inline-end: 3%;
+  bottom: 9%;
+  width: 100px;
+  height: 100px;
+}
+.product-scientific-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid #c4d8ac40;
+  background: linear-gradient(100deg, #c4d8ac0a, transparent);
+  margin-top: 28px;
+}
+.product-scientific-strip > div {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-inline-end: 1px solid #c4d8ac30;
+}
+.product-scientific-strip > div:last-child {
+  border-inline-end: 0;
+}
+.product-scientific-strip strong {
+  font-size: clamp(27px, 3.2vw, 46px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  text-align: start;
+}
+.product-scientific-strip small {
+  font-size: 0.6em;
+}
+.product-scientific-strip span {
+  font-size: 12px;
+  color: #c2d5af;
+}
+.product-analysis-note {
+  font-size: 11px;
+  color: #b9cbaa;
+  margin-top: 14px;
+}
+@media (max-width: 1000px) {
+  .home-page .product-copy h2 {
+    font-size: 76px;
+  }
+  .home-page .product-features {
+    font-size: 13px;
+    gap: 16px 12px;
+  }
+  .home-page .product-stage {
+    min-height: 520px;
+  }
+  .home-page .product-callout {
+    max-width: 138px;
+    font-size: 11px;
+    padding: 9px;
+  }
+}
+@media (max-width: 700px) {
+  .home-page .product-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .home-page .product-copy h2 {
+    font-size: clamp(72px, 18vw, 100px);
+  }
+  .home-page .product-description {
+    font-size: 16px;
+  }
+  .home-page .product-stage {
+    min-height: 440px;
+    max-width: 520px;
+    padding-block: 20px;
+  }
+  .home-page .product-image-scroll {
+    width: 94%;
+  }
+  .home-page .product-image-scroll img {
+    max-height: 540px;
+  }
+  .home-page .product-callout {
+    max-width: 125px;
+    font-size: 11px;
+  }
+  .home-page .product-callout--roots {
+    top: 12%;
+  }
+  .home-page .product-callout--stable {
+    bottom: 10%;
+  }
+  .home-page .product-callout--roots::after {
+    width: 14px;
+  }
+  .home-page .product-callout--water {
+    top: 43%;
+  }
+  .home-page .volume-badge {
+    width: 82px;
+    height: 82px;
+    bottom: 6%;
+    inset-inline-end: 1%;
+  }
+  .home-page .volume-badge strong {
+    font-size: 28px;
+  }
+  .product-scientific-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+  }
+  .product-scientific-strip > div {
+    padding: 20px 16px;
+  }
+  .product-scientific-strip > div:nth-child(2) {
+    border-inline-end: 0;
+  }
+  .product-scientific-strip > div:nth-child(-n + 2) {
+    border-bottom: 1px solid #c4d8ac30;
+  }
+  .product-scientific-strip strong {
+    font-size: clamp(24px, 8vw, 32px);
+  }
+}

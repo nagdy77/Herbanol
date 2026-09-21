@@ -10,9 +10,6 @@
   font-weight: 500;
   letter-spacing: 0.08em;
 }
-:root[dir='rtl'] .partners-strip h2 {
-  letter-spacing: 0;
-}
 .partners-window {
   overflow: hidden;
   direction: ltr;
@@ -59,9 +56,6 @@
 }
 .partner-logo:hover img {
   opacity: 1;
-}
-:root[dir='rtl'] .partners-track {
-  animation-direction: reverse;
 }
 .partners-track--static {
   animation: none;

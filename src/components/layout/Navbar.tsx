@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import ThemeToggle from '../ui/ThemeToggle'
 import BrandLogo from '../ui/BrandLogo'
 import Container from '../ui/Container'
-import LanguageSwitcher from '../ui/LanguageSwitcher'
 import { navigation } from '../../data/navigation'
 
 export default function Navbar() {
@@ -65,7 +64,6 @@ export default function Navbar() {
           </nav>
           <div className="header-actions">
             <ThemeToggle />
-            <LanguageSwitcher />
             <Link to="/#contact" className="header-contact">
               {t('common.contact')}
               <ArrowUpRight

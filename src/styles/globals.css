@@ -4,6 +4,7 @@
 @import './richness.css';
 @import './theme.css';
 @import './polish.css';
+@import './product-showcase.css';
 
 @theme {
   --color-primary: #078342;
@@ -210,27 +211,6 @@ em {
 }
 .skip-link:focus {
   transform: translateY(0);
-}
-:root[dir='rtl'] .directional-icon {
-  transform: scaleX(-1);
-}
-:root[lang='ar'] {
-  --font-sans: Tahoma, 'Segoe UI', Arial, sans-serif;
-  --font-editorial: Tahoma, 'Segoe UI', Arial, sans-serif;
-}
-:root[lang='ar'] em {
-  font-style: normal;
-  color: var(--color-primary);
-}
-:root[lang='ar'] .eyebrow {
-  letter-spacing: 0;
-  font-size: 12px;
-}
-:root[lang='ar'] h1,
-:root[lang='ar'] h2,
-:root[lang='ar'] h3 {
-  letter-spacing: 0;
-  line-height: 1.5;
 }
 @media (max-width: 767px) {
   .section-topline {

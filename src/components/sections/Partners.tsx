@@ -11,6 +11,10 @@ const logos = Object.entries(
     { eager: true, query: '?url', import: 'default' },
   ),
 )
+  .filter(
+    ([path]) =>
+      path !== '../../assets/logos/ChatGPT Image Sep 20, 2026, 07_01_48 PM.png',
+  )
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([path, src]) => ({ path, src }))
 

@@ -931,36 +931,6 @@
   margin-inline-start: auto;
   flex-shrink: 0;
 }
-:root[dir='rtl'] .depth-veil {
-  background:
-    linear-gradient(270deg, #fafbf7f5 4%, #fafbf7c9 52%, #fafbf760),
-    linear-gradient(0deg, var(--color-background), transparent 55%);
-}
-:root[dir='rtl'] .depth-backdrop--process .depth-veil {
-  background:
-    linear-gradient(270deg, #eff2e7f5, #eff2e7a6),
-    linear-gradient(0deg, var(--color-cream), #eff2e750 50%, #eff2e7ab);
-}
-:root[dir='rtl'] .depth-backdrop--contact .depth-veil {
-  background:
-    linear-gradient(270deg, #123326f5 15%, #123326d9 49%, #12332639),
-    linear-gradient(0deg, #12332691, transparent);
-}
-:root[lang='ar'] .rotating-phrase {
-  font-style: normal;
-  letter-spacing: 0;
-  font-size: 0.94em;
-  line-height: 1.5;
-}
-:root[lang='ar'] .phrase-stage {
-  height: 1.6em;
-}
-:root[lang='ar'] .hero-title {
-  line-height: 1.4;
-}
-:root[lang='ar'] .contact-copy em {
-  color: #d9eab4;
-}
 @media (max-width: 1100px) {
   .media-card-body {
     padding: 20px;
@@ -1186,9 +1156,6 @@
     padding: 40px 25px 28px;
   }
   .depth-backdrop--contact .depth-veil {
-    background: #123326dc;
-  }
-  :root[dir='rtl'] .depth-backdrop--contact .depth-veil {
     background: #123326dc;
   }
   .contact-panel-note {

@@ -11,7 +11,7 @@ import { ScrollTrigger } from '../../utils/motion/gsap'
 import { useReducedMotionPreference } from '../../hooks/useReducedMotionPreference'
 
 export default function Hero() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const reduced = useReducedMotionPreference()
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -28,7 +28,7 @@ export default function Hero() {
               {t('hero.eyebrow')}
             </p>
             <h1 className="sr-only">{t('brand.tagline')}</h1>
-            <div key={i18n.language} className="hero-title">
+            <div className="hero-title">
               {[t('hero.line1')].map((line, index) => (
                 <span
                   className={
@@ -98,7 +98,7 @@ export default function Hero() {
               >
                 <figure className="hero-image-frame" data-image-reveal>
                   <img
-                    src={i18n.language === 'ar' ? assets.heroAr : assets.heroEn}
+                    src={assets.heroEn}
                     alt={t('hero.imageAlt')}
                     width="1536"
                     height="1024"

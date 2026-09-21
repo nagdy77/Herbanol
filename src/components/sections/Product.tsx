@@ -3,7 +3,7 @@ import { Check, ArrowDown, Wind, Droplets, Dna } from 'lucide-react'
 import Container from '../ui/Container'
 import AnimatedNumber from '../ui/AnimatedNumber'
 import { assets } from '../../data/assets'
-import { productFeatures } from '../../data/product'
+import { productFeatures, productAnalysis } from '../../data/product'
 import { ScrollTrigger } from '../../utils/motion/gsap'
 
 export default function Product() {
@@ -34,7 +34,7 @@ export default function Product() {
             <ul className="product-features">
               {productFeatures.map((key) => (
                 <li key={key}>
-                  <Check size={14} aria-hidden="true" />
+                  <Check size={18} aria-hidden="true" />
                   {t('product.features.' + key)}
                 </li>
               ))}
@@ -71,56 +71,45 @@ export default function Product() {
             </div>
             <div className="volume-badge">
               <strong>
-                <AnimatedNumber value={65} />
+                <AnimatedNumber value={110} />
                 <span>{t('product.unit')}</span>
               </strong>
               <span>{t('product.volume')}</span>
             </div>
             <div className="product-callout product-callout--roots">
-              <Wind size={17} aria-hidden="true" />
+              <Wind size={20} aria-hidden="true" />
               <span>{t('product.calloutRoot')}</span>
             </div>
             <div className="product-callout product-callout--water">
-              <Droplets size={17} aria-hidden="true" />
+              <Droplets size={20} aria-hidden="true" />
               <div>
                 <strong dir="ltr">642%</strong>
                 <span>{t('product.calloutWater')}</span>
               </div>
             </div>
             <div className="product-callout product-callout--stable">
-              <Dna size={17} aria-hidden="true" />
+              <Dna size={20} aria-hidden="true" />
               <span>{t('product.calloutStable')}</span>
             </div>
           </div>
         </div>
-        <div className="product-spec-strip" data-stagger>
-          {['material', 'method', 'format'].map((key) => (
-            <div key={key} data-reveal>
-              <span>{t('product.' + key + 'Label')}</span>
-              <p>{t('product.' + key + 'Text')}</p>
-            </div>
-          ))}
-        </div>
-        <div className="product-metrics">
-          <div>
-            <span className="metric-value" dir="ltr">
-              <AnimatedNumber value={90} suffix="%" />
-            </span>
-            <span>{t('product.organic')}</span>
+        <div className="product-scientific-strip" data-stagger>
+          <div data-reveal>
+            <strong dir="ltr">
+              110 <small>{t('product.unit')}</small>
+            </strong>
+            <span>{t('product.volume')}</span>
           </div>
-          <div>
-            <span className="metric-value" dir="ltr">
-              <AnimatedNumber value={49} suffix="%" />
-            </span>
-            <span>{t('product.moisture')}</span>
-          </div>
-          <p>
-            {t('product.analysisNote')}
-            <a href="#science" aria-label={t('product.dataLink')}>
-              <ArrowDown size={20} aria-hidden="true" />
-            </a>
-          </p>
+          {productAnalysis
+            .filter(({ key }) => ['ph', 'ec', 'water'].includes(key))
+            .map(({ key, value }) => (
+              <div key={key} data-reveal>
+                <strong dir="ltr">{value}</strong>
+                <span>{t('science.labels.' + key)}</span>
+              </div>
+            ))}
         </div>
+        <p className="product-analysis-note">{t('product.analysisNote')}</p>
       </Container>
     </section>
   )

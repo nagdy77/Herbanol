@@ -63,22 +63,7 @@
     ),
     linear-gradient(0deg, var(--color-background), transparent 55%);
 }
-:root[dir='rtl'] .depth-backdrop--hero .depth-veil {
-  background:
-    linear-gradient(
-      270deg,
-      var(--veil-strong) 4%,
-      var(--veil-medium) 52%,
-      var(--veil-light)
-    ),
-    linear-gradient(0deg, var(--color-background), transparent 55%);
-}
 .depth-backdrop--process .depth-veil,
-:root[dir='rtl'] .depth-backdrop--process .depth-veil {
-  background:
-    linear-gradient(90deg, var(--process-veil), var(--veil-light)),
-    linear-gradient(0deg, var(--color-cream), transparent 60%);
-}
 .process-step,
 .process-summary > div > span,
 .phrase-controls button {
@@ -86,9 +71,6 @@
 }
 .phrase-controls button:hover {
   background: var(--surface-accent);
-}
-.language-switcher button[aria-pressed='true'] {
-  color: var(--color-text);
 }
 .depth-symbol {
   color: var(--color-primary);
