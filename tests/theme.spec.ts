@@ -89,7 +89,7 @@ test('light default, persistent dark theme, full-page visual review and contacts
       await expect(links).toHaveCount(4)
       await expect(links.nth(0)).toHaveAttribute(
         'href',
-        'mailto:herbanol.com@gmail.com',
+        'mailto:herbanol.co@gmail.com',
       )
       await expect(links.nth(1)).toHaveAttribute(
         'href',

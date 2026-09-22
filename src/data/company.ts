@@ -10,8 +10,8 @@ export const locationEmbedUrl: string =
 export const company = {
   // Egyptian local 01062097801 → international +20 106 209 7801.
   whatsapp: 'https://wa.me/201062097801',
-  email: 'herbanol.com@gmail.com',
-  emailHref: 'mailto:herbanol.com@gmail.com',
+  email: 'herbanol.co@gmail.com',
+  emailHref: 'mailto:herbanol.co@gmail.com',
   linkedin: 'https://www.linkedin.com/company/herbanol-company/',
   facebook: 'https://www.facebook.com/p/Herbanol-Company-61569695805373/',
   videos: [

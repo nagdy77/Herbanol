@@ -128,7 +128,7 @@ test('navigation and direct links reach real sections', async ({
   }
   await expect(page.locator('.contact-copy a')).toHaveAttribute(
     'href',
-    'mailto:herbanol.com@gmail.com',
+    'mailto:herbanol.co@gmail.com',
   )
   await page.goto('/not-a-page')
   await expect(page).toHaveURL(/\/$/)
